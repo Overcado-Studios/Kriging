@@ -1,0 +1,92 @@
+{
+  "builds": [
+    {
+      "degraded": false,
+      "name": "simple_spherical_exact",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "ordinary_exponential_filtered_measurement",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "universal_linear_nested_anisotropic",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "universal_quadratic_matern",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "external_drift_3d_nested",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "universal_linear_3d_gaussian",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "ordinary_power_exact",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "ordinary_power_filtered",
+      "ridge": 0.0
+    },
+    {
+      "degraded": false,
+      "name": "universal_quadratic_3d",
+      "ridge": 0.0
+    }
+  ],
+  "compile_command": [
+    "c++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/reference_probe.cpp",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+    "-o",
+    "/tmp/kriging_reference_7ttjlikm/reference_probe"
+  ],
+  "compiler": "c++",
+  "metrics": {
+    "maximum_scaled_value_error": 4.551914400963142e-15,
+    "maximum_scaled_variance_error": 1.1102230246251565e-15,
+    "tolerance": 2e-09,
+    "worst_value_case": "external_drift_3d_nested[8]",
+    "worst_variance_case": "universal_quadratic_matern[5]"
+  },
+  "notes": [
+    "NumPy independently assembles and solves every augmented matrix.",
+    "The C++ probe parses model data and calls the shipped Model::Build and EvaluateWithVariance paths.",
+    "Scenarios cover all kriging drift methods, bounded structures, Mat\u00e9rn, power exact/filtered branches, anisotropy, 2D/3D, and measurement variance."
+  ],
+  "numpy": "2.5.2",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "query_count": 81,
+  "scenario_count": 9,
+  "scipy": "1.18.1",
+  "source_sha256": {
+    "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+    "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+    "Tests/Review/reference_probe.cpp": "51401e9c11c3c9b821a5b7e4e8f4d66c2c2983b90b0c8516bdb6a7814b561f44",
+    "Tests/Review/validate_reference.py": "af566a6ae3e51f38d889ac08a978a47b2c3fc903a8ab382de812529bf8af208a"
+  },
+  "status": "PASS"
+}

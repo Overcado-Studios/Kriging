@@ -1,0 +1,936 @@
+{
+  "cmake_gates": {
+    "gcc_asan_ubsan": {
+      "cmake_version": "cmake version 4.2.1",
+      "compiler_requested": "c++",
+      "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+      "configuration": "Debug",
+      "ctest_version": "ctest version 4.2.1",
+      "finished_utc": "2026-08-25T15:11:48.970245+00:00",
+      "machine": "x86_64",
+      "name": "gcc_asan_ubsan",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "sanitizers": [
+        "address",
+        "undefined"
+      ],
+      "started_utc": "2026-08-25T15:10:59.659587+00:00",
+      "status": "PASS",
+      "steps": [
+        {
+          "command": [
+            "cmake",
+            "-S",
+            "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Standalone",
+            "-B",
+            "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+            "-DCMAKE_BUILD_TYPE=Debug",
+            "-DCMAKE_CXX_FLAGS=-fsanitize=address,undefined -fno-omit-frame-pointer",
+            "-DCMAKE_EXE_LINKER_FLAGS=-fsanitize=address,undefined"
+          ],
+          "duration_seconds": 1.2274691170023289,
+          "name": "gcc_asan_ubsan:configure",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (1.1s)\n-- Generating done (0.1s)\n-- Build files have been written to: /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n"
+        },
+        {
+          "command": [
+            "cmake",
+            "--build",
+            "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+            "--parallel",
+            "1"
+          ],
+          "duration_seconds": 39.697493860992836,
+          "name": "gcc_asan_ubsan:build",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "[  6%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp.o\n[ 12%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp.o\n[ 18%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp.o\n[ 25%] Linking CXX static library libkriging_portable.a\n[ 25%] Built target kriging_portable\n[ 31%] Building CXX object CMakeFiles/kriging_core_tests.dir/test_core.cpp.o\n[ 37%] Linking CXX executable kriging_core_tests\n[ 37%] Built target kriging_core_tests\n[ 43%] Building CXX object CMakeFiles/kriging_allocation_probe.dir/allocation_probe.cpp.o\n[ 50%] Linking CXX executable kriging_allocation_probe\n[ 50%] Built target kriging_allocation_probe\n[ 56%] Building CXX object CMakeFiles/kriging_mc_sphere_test.dir/test_marching_cubes.cpp.o\n[ 62%] Linking CXX executable kriging_mc_sphere_test\n[ 62%] Built target kriging_mc_sphere_test\n[ 68%] Building CXX object CMakeFiles/kriging_mc_table_test.dir/test_mc_tables.cpp.o\n[ 75%] Linking CXX executable kriging_mc_table_test\n[ 75%] Built target kriging_mc_table_test\n[ 81%] Building CXX object CMakeFiles/kriging_analysis_smoke_test.dir/test_analysis_smoke.cpp.o\n[ 87%] Linking CXX executable kriging_analysis_smoke_test\n[ 87%] Built target kriging_analysis_smoke_test\n[ 93%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/KrigingCoreModule.cpp.o\n[100%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp.o\n[100%] Built target kriging_unreal_source_syntax\n"
+        },
+        {
+          "command": [
+            "ctest",
+            "--test-dir",
+            "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+            "--output-on-failure"
+          ],
+          "duration_seconds": 8.364276136999251,
+          "name": "gcc_asan_ubsan:ctest",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Test project /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n    Start 1: kriging_core_properties\n1/5 Test #1: kriging_core_properties ...............   Passed    6.26 sec\n    Start 2: kriging_global_query_no_allocations\n2/5 Test #2: kriging_global_query_no_allocations ...   Passed    1.81 sec\n    Start 3: mc_sphere_test\n3/5 Test #3: mc_sphere_test ........................   Passed    0.16 sec\n    Start 4: mc_table_test\n4/5 Test #4: mc_table_test .........................   Passed    0.01 sec\n    Start 5: analysis_smoke_test\n5/5 Test #5: analysis_smoke_test ...................   Passed    0.11 sec\n\n100% tests passed, 0 tests failed out of 5\n\nTotal Test time (real) =   8.36 sec\n"
+        }
+      ]
+    },
+    "gcc_release": {
+      "cmake_version": "cmake version 4.2.1",
+      "compiler_requested": "c++",
+      "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+      "configuration": "Release",
+      "ctest_version": "ctest version 4.2.1",
+      "finished_utc": "2026-08-25T15:12:31.028086+00:00",
+      "machine": "x86_64",
+      "name": "gcc_release",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "sanitizers": [],
+      "started_utc": "2026-08-25T15:11:49.170967+00:00",
+      "status": "PASS",
+      "steps": [
+        {
+          "command": [
+            "cmake",
+            "-S",
+            "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Standalone",
+            "-B",
+            "/tmp/kriging_gcc_release_rguo2sug",
+            "-DCMAKE_BUILD_TYPE=Release"
+          ],
+          "duration_seconds": 0.9686809220002033,
+          "name": "gcc_release:configure",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (0.9s)\n-- Generating done (0.1s)\n-- Build files have been written to: /tmp/kriging_gcc_release_rguo2sug\n"
+        },
+        {
+          "command": [
+            "cmake",
+            "--build",
+            "/tmp/kriging_gcc_release_rguo2sug",
+            "--parallel",
+            "1"
+          ],
+          "duration_seconds": 40.52165571600199,
+          "name": "gcc_release:build",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "[  6%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp.o\n[ 12%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp.o\n[ 18%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp.o\n[ 25%] Linking CXX static library libkriging_portable.a\n[ 25%] Built target kriging_portable\n[ 31%] Building CXX object CMakeFiles/kriging_core_tests.dir/test_core.cpp.o\n[ 37%] Linking CXX executable kriging_core_tests\n[ 37%] Built target kriging_core_tests\n[ 43%] Building CXX object CMakeFiles/kriging_allocation_probe.dir/allocation_probe.cpp.o\n[ 50%] Linking CXX executable kriging_allocation_probe\n[ 50%] Built target kriging_allocation_probe\n[ 56%] Building CXX object CMakeFiles/kriging_mc_sphere_test.dir/test_marching_cubes.cpp.o\n[ 62%] Linking CXX executable kriging_mc_sphere_test\n[ 62%] Built target kriging_mc_sphere_test\n[ 68%] Building CXX object CMakeFiles/kriging_mc_table_test.dir/test_mc_tables.cpp.o\n[ 75%] Linking CXX executable kriging_mc_table_test\n[ 75%] Built target kriging_mc_table_test\n[ 81%] Building CXX object CMakeFiles/kriging_analysis_smoke_test.dir/test_analysis_smoke.cpp.o\n[ 87%] Linking CXX executable kriging_analysis_smoke_test\n[ 87%] Built target kriging_analysis_smoke_test\n[ 93%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/KrigingCoreModule.cpp.o\n[100%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp.o\n[100%] Built target kriging_unreal_source_syntax\n"
+        },
+        {
+          "command": [
+            "ctest",
+            "--test-dir",
+            "/tmp/kriging_gcc_release_rguo2sug",
+            "--output-on-failure"
+          ],
+          "duration_seconds": 0.33305059000849724,
+          "name": "gcc_release:ctest",
+          "return_code": 0,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Test project /tmp/kriging_gcc_release_rguo2sug\n    Start 1: kriging_core_properties\n1/5 Test #1: kriging_core_properties ...............   Passed    0.23 sec\n    Start 2: kriging_global_query_no_allocations\n2/5 Test #2: kriging_global_query_no_allocations ...   Passed    0.07 sec\n    Start 3: mc_sphere_test\n3/5 Test #3: mc_sphere_test ........................   Passed    0.01 sec\n    Start 4: mc_table_test\n4/5 Test #4: mc_table_test .........................   Passed    0.00 sec\n    Start 5: analysis_smoke_test\n5/5 Test #5: analysis_smoke_test ...................   Passed    0.01 sec\n\n100% tests passed, 0 tests failed out of 5\n\nTotal Test time (real) =   0.33 sec\n"
+        }
+      ]
+    }
+  },
+  "finished_utc": "2026-08-25T15:13:00.123539+00:00",
+  "independent_reference_report": {
+    "builds": [
+      {
+        "degraded": false,
+        "name": "simple_spherical_exact",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "ordinary_exponential_filtered_measurement",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "universal_linear_nested_anisotropic",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "universal_quadratic_matern",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "external_drift_3d_nested",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "universal_linear_3d_gaussian",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "ordinary_power_exact",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "ordinary_power_filtered",
+        "ridge": 0.0
+      },
+      {
+        "degraded": false,
+        "name": "universal_quadratic_3d",
+        "ridge": 0.0
+      }
+    ],
+    "compile_command": [
+      "c++",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/reference_probe.cpp",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+      "-o",
+      "/tmp/kriging_reference_7ttjlikm/reference_probe"
+    ],
+    "compiler": "c++",
+    "metrics": {
+      "maximum_scaled_value_error": 4.551914400963142e-15,
+      "maximum_scaled_variance_error": 1.1102230246251565e-15,
+      "tolerance": 2e-09,
+      "worst_value_case": "external_drift_3d_nested[8]",
+      "worst_variance_case": "universal_quadratic_matern[5]"
+    },
+    "notes": [
+      "NumPy independently assembles and solves every augmented matrix.",
+      "The C++ probe parses model data and calls the shipped Model::Build and EvaluateWithVariance paths.",
+      "Scenarios cover all kriging drift methods, bounded structures, Mat\u00e9rn, power exact/filtered branches, anisotropy, 2D/3D, and measurement variance."
+    ],
+    "numpy": "2.5.2",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "query_count": 81,
+    "scenario_count": 9,
+    "scipy": "1.18.1",
+    "source_sha256": {
+      "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+      "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+      "Tests/Review/reference_probe.cpp": "51401e9c11c3c9b821a5b7e4e8f4d66c2c2983b90b0c8516bdb6a7814b561f44",
+      "Tests/Review/validate_reference.py": "af566a6ae3e51f38d889ac08a978a47b2c3fc903a8ab382de812529bf8af208a"
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "No Unreal Engine installation was available; UnrealBuildTool, UnrealHeaderTool, BuildPlugin, and the UE automation smoke test were not run.",
+    "This evidence validates the active portable numerical core, not removed editor, renderer, PCG, content, Cesium, Landscape, or packaging subsystems."
+  ],
+  "machine": "x86_64",
+  "numeric_report": {
+    "compile_command": [
+      "c++",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/numeric_probe.cpp",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+      "-o",
+      "/tmp/kriging_numeric_xw49gbs7/numeric_probe"
+    ],
+    "compiler": "c++",
+    "metrics": {
+      "as241_max_absolute_error": 2.6645352591003757e-15,
+      "bessel_max_relative_error": 5.953342970413191e-15,
+      "matern_gaussian_rescaled_range_mismatch": 0.020148109468343334,
+      "matern_gaussian_same_range_mismatch": 0.17870850356229911,
+      "matern_nu_9_99_to_10_discontinuity": 2.0676080150550114e-05,
+      "structure_max_absolute_error": 2.875477633779196e-14
+    },
+    "notes": [
+      "The shipped C++ analytic structure evaluator was compiled and called directly.",
+      "There is no CPU lookup table in this correctness gate, so no Python lookup restatement is reported as production evidence."
+    ],
+    "numpy": "2.5.2",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.18.1",
+    "source_sha256": {
+      "Source/KrigingCore/Private/Portable/KrigeBessel.h": "7f2ce7696209e240095a4034f24611c40ba390d972586371aa6f567398ad9a6e",
+      "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+      "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+      "Tests/Review/numeric_probe.cpp": "365d5c189153de99f71e0b5f35ebd06bd8d5eaf34c21a56d29ffdb11fa5ad0eb"
+    },
+    "status": "PASS"
+  },
+  "pinned_versions": {
+    "installed": {
+      "numpy": "2.5.2",
+      "pykrige": "1.7.3",
+      "scipy": "1.18.1"
+    },
+    "mismatches": {
+      "numpy": {
+        "installed": "2.5.2",
+        "pinned": "2.3.5"
+      },
+      "scipy": {
+        "installed": "1.18.1",
+        "pinned": "1.17.0"
+      }
+    },
+    "pinned": {
+      "numpy": "2.3.5",
+      "pykrige": "1.7.3",
+      "scipy": "1.17.0"
+    },
+    "pinned_versions_matched": false,
+    "requirements_file": "Tests/Review/requirements.txt"
+  },
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "pykrige_golden_report": {
+    "compile_command": [
+      "c++",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+      "-I",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/golden_probe.cpp",
+      "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+      "-o",
+      "/tmp/kriging_golden_440y18k5/golden_probe"
+    ],
+    "compiler": "c++",
+    "failures": [],
+    "goldens_generated_utc": "2026-08-25T10:50:40.064047+00:00",
+    "goldens_generated_with_versions": {
+      "numpy": "2.5.2",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "pykrige": "1.7.3",
+      "python": "3.12.3",
+      "scipy": "1.18.1"
+    },
+    "goldens_path": "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Golden/goldens.json",
+    "metrics": {
+      "maximum_scaled_value_error": 3.319566843629218e-14,
+      "maximum_scaled_variance_error": 1.1324274851176597e-14,
+      "value_tolerance": 1e-09,
+      "variance_tolerance": 1e-09,
+      "worst_value_case": "universal_linear_3d_gaussian[5]",
+      "worst_variance_case": "universal_linear_3d_gaussian[7]"
+    },
+    "notes": [
+      "PyKrige independently computes ordinary/universal-linear kriging predictions and variances using its own built-in spherical/exponential/gaussian variogram models and its own dense linear solver.",
+      "The C++ probe parses the same scenarios (frozen in goldens.json's wire_protocol field) and calls the shipped Model::Build / EvaluateWithVariance public API.",
+      "Range parameters are translated between the two libraries' conventions before comparison; see goldens.json['range_convention_mapping'] and RANGE_CONVENTIONS.md."
+    ],
+    "per_scenario": [
+      {
+        "a_cpp": 5.0,
+        "max_scaled_value_error": 2.9094559187447993e-15,
+        "max_scaled_variance_error": 2.853433490587359e-15,
+        "method": 1,
+        "name": "ordinary_2d_spherical",
+        "r_pykrige": 5.0,
+        "shape": "spherical",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 4.0,
+        "max_scaled_value_error": 1.6350984754903632e-15,
+        "max_scaled_variance_error": 1.5245352754524683e-15,
+        "method": 1,
+        "name": "ordinary_2d_exponential",
+        "r_pykrige": 12.0,
+        "shape": "exponential",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 4.0,
+        "max_scaled_value_error": 7.918111890193694e-15,
+        "max_scaled_variance_error": 1.0227929614359255e-14,
+        "method": 1,
+        "name": "ordinary_2d_gaussian",
+        "r_pykrige": 7.0,
+        "shape": "gaussian",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 3.0,
+        "max_scaled_value_error": 2.8164607466513374e-15,
+        "max_scaled_variance_error": 3.58046925441613e-15,
+        "method": 1,
+        "name": "ordinary_2d_exponential_filtered",
+        "r_pykrige": 9.0,
+        "shape": "exponential",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 3.0,
+        "max_scaled_value_error": 8.326672684688674e-15,
+        "max_scaled_variance_error": 5.218048215738236e-15,
+        "method": 1,
+        "name": "ordinary_2d_gaussian_filtered",
+        "r_pykrige": 5.25,
+        "shape": "gaussian",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 6.0,
+        "max_scaled_value_error": 4.357275238246248e-15,
+        "max_scaled_variance_error": 6.217248937900877e-15,
+        "method": 2,
+        "name": "universal_linear_2d_spherical",
+        "r_pykrige": 6.0,
+        "shape": "spherical",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 5.0,
+        "max_scaled_value_error": 9.992007221626409e-15,
+        "max_scaled_variance_error": 4.773959005888173e-15,
+        "method": 2,
+        "name": "universal_linear_2d_exponential",
+        "r_pykrige": 15.0,
+        "shape": "exponential",
+        "volumetric": false
+      },
+      {
+        "a_cpp": 6.0,
+        "max_scaled_value_error": 1.4719741101309034e-15,
+        "max_scaled_variance_error": 1.4171930778452776e-15,
+        "method": 1,
+        "name": "ordinary_3d_spherical",
+        "r_pykrige": 6.0,
+        "shape": "spherical",
+        "volumetric": true
+      },
+      {
+        "a_cpp": 4.5,
+        "max_scaled_value_error": 4.16025619302377e-15,
+        "max_scaled_variance_error": 4.3298697960381105e-15,
+        "method": 1,
+        "name": "ordinary_3d_exponential",
+        "r_pykrige": 13.5,
+        "shape": "exponential",
+        "volumetric": true
+      },
+      {
+        "a_cpp": 4.5,
+        "max_scaled_value_error": 1.5210055437364645e-14,
+        "max_scaled_variance_error": 7.449353956773286e-15,
+        "method": 1,
+        "name": "ordinary_3d_gaussian",
+        "r_pykrige": 7.875,
+        "shape": "gaussian",
+        "volumetric": true
+      },
+      {
+        "a_cpp": 7.0,
+        "max_scaled_value_error": 3.319566843629218e-14,
+        "max_scaled_variance_error": 1.1324274851176597e-14,
+        "method": 2,
+        "name": "universal_linear_3d_gaussian",
+        "r_pykrige": 12.25,
+        "shape": "gaussian",
+        "volumetric": true
+      }
+    ],
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "query_count": 99,
+    "range_convention_mapping": {
+      "exponential": "R_pykrige = 3 * a_cpp",
+      "gaussian": "R_pykrige = (7/4) * a_cpp",
+      "source": "Derived from pykrige/variogram_models.py (this venv's installed copy) and Source/KrigingCore/Private/Portable/KrigePortableCore.cpp EvaluateNormalizedStructure(); see module docstring of generate_goldens.py.",
+      "spherical": "R_pykrige = a_cpp"
+    },
+    "scenario_count": 11,
+    "sensitivity": {
+      "ordinary_2d_exponential": {
+        "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.47814386566824485,
+        "max_abs_variance_delta_between_mappings": 0.4759365596765911,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "ordinary_2d_exponential_filtered": {
+        "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.35052337667168953,
+        "max_abs_variance_delta_between_mappings": 0.4059528321645602,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "ordinary_2d_gaussian": {
+        "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.3005131325593666,
+        "max_abs_variance_delta_between_mappings": 0.5482080492454064,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "ordinary_2d_gaussian_filtered": {
+        "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.2118782009247041,
+        "max_abs_variance_delta_between_mappings": 0.4101025541438369,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "ordinary_3d_exponential": {
+        "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.41129669296473903,
+        "max_abs_variance_delta_between_mappings": 0.4562076451136398,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "ordinary_3d_gaussian": {
+        "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.568263131007199,
+        "max_abs_variance_delta_between_mappings": 0.6494104529103358,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "universal_linear_2d_exponential": {
+        "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.059885875338454575,
+        "max_abs_variance_delta_between_mappings": 0.3104824458455398,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      },
+      "universal_linear_3d_gaussian": {
+        "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+        "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+        "max_abs_value_delta_between_mappings": 0.08520691823105331,
+        "max_abs_variance_delta_between_mappings": 0.5824746478762839,
+        "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+      }
+    },
+    "source_sha256": {
+      "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+      "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+      "golden_probe.cpp": "b8ae602c4567ee9abec4a7af35255c403a0c5c26d3290ff5201e83cd22c59102",
+      "goldens.json": "1aab8fa80bbb5e0587ef783f30726b616553972dd0a1f0f822c1bab9d66d2370"
+    },
+    "status": "PASS"
+  },
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "source_sha256_before_run": {
+    ".git/COMMIT_EDITMSG": "0ec29a1a2cdc3700dee4337208aa7a2ad28c95981b51812b588e37445876aa8c",
+    ".git/HEAD": "f6f2b945f6c411b02ba3da9c7ace88dcf71b6af65ba2e0d89aa82900042b5a10",
+    ".git/config": "16ede81ff8225a028ea47d7da268da123355decf7cc0fa7b66b8cc4060005fa6",
+    ".git/description": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+    ".git/hooks/applypatch-msg.sample": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+    ".git/hooks/commit-msg.sample": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+    ".git/hooks/fsmonitor-watchman.sample": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+    ".git/hooks/post-update.sample": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+    ".git/hooks/pre-applypatch.sample": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+    ".git/hooks/pre-commit.sample": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+    ".git/hooks/pre-merge-commit.sample": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+    ".git/hooks/pre-push.sample": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+    ".git/hooks/pre-rebase.sample": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+    ".git/hooks/pre-receive.sample": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+    ".git/hooks/prepare-commit-msg.sample": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+    ".git/hooks/push-to-checkout.sample": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+    ".git/hooks/sendemail-validate.sample": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+    ".git/hooks/update.sample": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+    ".git/index": "5d78eab12256e9687a93a654d451478257a667641ae9cbf38005ced03b15a9f1",
+    ".git/info/exclude": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+    ".git/logs/HEAD": "25f415c61f4f85ab2b9ff6629b5a06c1682292cf3e5a71d8e31aa8522fdefaca",
+    ".git/logs/refs/heads/master": "25f415c61f4f85ab2b9ff6629b5a06c1682292cf3e5a71d8e31aa8522fdefaca",
+    ".git/objects/00/2d52316e0026dbc3737fddb58cbd630d694a21": "65aa4107efdc70d0ee14b8098ddfa8ae09ab275d5765ac2c7c5cc4c2232d87a7",
+    ".git/objects/00/e9dcd3b2c58aced511a61618fc4698b89514e2": "d620dd84ffaaf5f38038f443580cc9a5ee3798ad6eb602fdf4fd09b714b186c5",
+    ".git/objects/01/1cd84c9a56bab810ab699306a71c06937a8be9": "4a874a2fa649457702f41f88bc641bcd22825024b8f995a2739be1bcd5c97749",
+    ".git/objects/01/8c9edfead4190301ec19c3f7b1855d4d604a70": "4d786e84e454d26f49a06fc53a1dc7bccfa3294c8e5ba78af6a8602fc0e9888b",
+    ".git/objects/01/fd96dc45c2859c1aa5a22c93a1c59c15a257f3": "72e5bc7115c1af2ed040c4151ebdbe4d9023b0b158b1831b6fea4dcd0a9c1a25",
+    ".git/objects/03/f9709bd2497dc9b397f1823ef63da9497b0965": "976aeef844063ef578c94dfe40cc5d57249b4999b41e23c2091352e83b775482",
+    ".git/objects/05/190b768ba70d34e4bb0885faa9c38e105eadfb": "ae20cac967bba72c07a2a3fdfcb28e3ef595377eba3cab9345d0c92cc1350074",
+    ".git/objects/05/335049bddec9104b181b18d41d677ffaca77a8": "ad9de75f3eab8060672784a1f91894dd7d7c577a4f3d5a456f429a60f8fe24be",
+    ".git/objects/05/d8a455539f9fbcabac5ffd705dbd199097b876": "1cf71fc5c80e8f6508944e6935bb8eeb4281c55056c11d981d16c90faa12c271",
+    ".git/objects/09/184bfa487affa915ef5ead43fc1d194c3b6299": "efc83aedcd6b6540ea7f9d9976755f39da2113f58bc81c28db64423a5afdc133",
+    ".git/objects/0b/46537f044956ae4fffdf5b49ab04ac600a088c": "7eeaf72b152aedf225031462f5f279691b271d9fccd41bfe43c944b0a6d9b1aa",
+    ".git/objects/0c/6f477ff45e65c0a0112fd213f5c7d1c8da9e5b": "716da04ae3935bb63c3c1b992779060b4326cff3e42a6b663c6ea4dbde060aa2",
+    ".git/objects/11/4b5da7de1a49b4717a5aa4e54dc78d97be6432": "fc202f6b9bf61f7c6e9a79bc28d699a565b02950967bc9676814b9a9ce717745",
+    ".git/objects/12/0dca4b7d33345baf1a24a71cdebdf279088b86": "1bcadbc524476ba3be519fb9feda50f5db24769d8ab7fc9ad0ca846b68fc45c7",
+    ".git/objects/14/9a9dcb09d18a27143131e531bab8a3e870af33": "a9a50cfc2d26f6af9ad8d7c2d8e8061de92aea151ebf974bdd930962b4917d89",
+    ".git/objects/17/4678520c97931ab7f42a8a1e91e2892d7edc51": "c4a5908882461f4f9f84a064be1404e6d695834a3e99da6090ebb6d46682f39c",
+    ".git/objects/18/023b981aee0fbe0a2dd6af5db891732402a96c": "4439016ef62008cd2a11bef8573040062c6f0213150558b89672e812aa108451",
+    ".git/objects/19/6f97432b0a43bdcf9e2d247a476b4a49219dc1": "dbc294b386d7e46d8be812eee2a81a369ac076943b119581e0538dc417b79bc2",
+    ".git/objects/1c/3c7b48ccb4ab6ef3293fb67d9392fae4c3e8ca": "58113a75a749396d96f397e6275b648bfd2dbb440a0ea586cee711ebd334e92f",
+    ".git/objects/21/5ba7db6b6e4fbff6057b12a9587383fb5c8150": "a72c80b3adc2626a2250c8f07d64e2fefb1b5076ba002f86d3e9940320f184ec",
+    ".git/objects/2a/98e96c66aa121d529dbf7ba20b56e42bca7212": "181ecbac468d90e228d3294e09e5df812d2d7179f4fd671db84415f0f8a804e1",
+    ".git/objects/2c/3b0b9f8153c7a3d88be54ec1ae988887b109df": "126e0331da27f1a4a02de764a30cd76fca2de061ef50515c534106af79aba403",
+    ".git/objects/2d/103df8f77e33b19a46e2c9601b2c484f405464": "87d53c8646f0739b3a0095f38443a2e86003e77c06c4e38ab9e243702d1f0b2f",
+    ".git/objects/2d/87ab1a9fa42781f9eec80c1d29e605ad313b85": "3d6b6a3a537d2a3630705a5eb34737cdca1f71d80e49bf42522e764ba97b54eb",
+    ".git/objects/2f/0c317cc4fae26e1a27568dc487ba4f667b361b": "b2679cb2d237355cb541c3d5ec559c2b503658080c5b123e7d886bca6be53e02",
+    ".git/objects/2f/e68f0e90a4cda2ab7c8847ec5ccf644db8be5c": "a7aff191dc7c236a8dfeee624d6881ea6ee5c32b7b181c373306ed71d40caf2b",
+    ".git/objects/31/1483c9e8449aa22bf58f0044ce46c4cd560534": "0d773f151d7dd894891adf022eae0c8d9b41c454a90175df874d243117abd6e6",
+    ".git/objects/34/dc9d5e9930e40f75a2595044b913e56abfa15c": "ef16647c3d963367a528ae7c616b5554cad7dde4950ccd05d7f5357847739a6a",
+    ".git/objects/35/0219b192c5897327419be6b56916abd9cff928": "2a3434960e9007b002a335ffbaf3ed9f8ba642e2b4c3422ae2462f734fe261df",
+    ".git/objects/37/173da97731408a2951a7279af5576e5ed46dd1": "c4a64d92285b5b5af1d0d53ca1d1475a2f49093c46f45ffa5dbfea8bde138b0a",
+    ".git/objects/38/89368fdd2dea6b7804966c689c46ca8bfac224": "28c9d20ab3e25104e97bfcbbb9c20387992e7bcbcfd80b278894ecf578df6f00",
+    ".git/objects/3a/5023ba122d1ce4fa44c300dbf54cf1a2cc2f69": "e219ce300ade6769dc9fea7dd20aa64a0d47fb1d462485fcfca2b3a2398e176f",
+    ".git/objects/3b/dbfc745749d3e37cde0353afc3de911b13bbc4": "42abc66bc0125c478282b8e03f6b58ec2ac962906222957724a6b0bc9961e7c8",
+    ".git/objects/3c/ab40a548be73f3cef10e8c5dd10a2c2c872896": "c1bc0b1c19e0b11c6db3bc393ea03bc06e1c6d541cec16f1587efb96604c1566",
+    ".git/objects/3f/4d3e3cc32a2cfa5afc7dc2d279724c32fa47ea": "34b3ef471491135ae2f647fd744dbcb8bb4f52d6591a1da6bf968f4fbb2669bf",
+    ".git/objects/43/b38d64564b632e09bb3b87092016f17899d96c": "308342cb9bde6bc7bed3eb24cd2422cb5d5d5b15de0f83fa11dba269a0781bce",
+    ".git/objects/46/fc59e2822ac7b511c51553fcb44b2159927a8c": "02c894f160d279a65417022993e9b475a7054f9d7445bc0d05a26fb8b2f9d674",
+    ".git/objects/48/7f39b34ad1a68e57f5d6c1dfda2d40b28875b2": "d152c71d61fa17155df086bd9c52e7f480ae06f3299842e2bb6326d334f4763e",
+    ".git/objects/48/96142f994ea6513bc1edbc17829174fc4e2fc1": "88076d29f220545bbd1269c890ccc758d6ff2eeb21d04fc72d11eb30cd00307d",
+    ".git/objects/48/e456a2044eaa47ae8558bef05769d8f40c7d96": "743c233ea601d9c59511eda4fca1151e009bddf111f221e63b521c4c23f59a7e",
+    ".git/objects/4c/439ffda0a986a6315f0e2dd3b2ec3fae64a53a": "46b8438c086425af2c1e239372a55332db59980e8c52592bdf966e876f8a849d",
+    ".git/objects/4d/ba88d479b6baf5881cc384c45c03fdf9f2f193": "b18858d32252e3186d37d6428ca82e14b5894716a6113e3fd896bd933a0469dd",
+    ".git/objects/4d/dadcb4f3a35f9893e168b977508096059bbb41": "391b71eca58777c00d628fc1bcd2304503f2ec67cc3464378248eb36630e99c7",
+    ".git/objects/4e/7939b0a15d83f6350c11a938b57f5a1d6e89e0": "27356006ffb31162d3305dbb6ba687e6afb84f88a3ccb5811315122e6e02f853",
+    ".git/objects/51/bb72e0961b9cfffafe6ba7f0fe14fcaff0d188": "e20c298469aa5f9a6dc1510b286181f4973fcd0ec57f9fee385a5f2357bf101c",
+    ".git/objects/52/5f03afb1f164cdf37fd6d86bd4b5713013a7cb": "667401df55fd3c48d3e79799651e765dc1e451b061d2572bef07c4b35fb4cbb6",
+    ".git/objects/53/2561c74c356428e349eff626fa777e2a0e4cdc": "a42979b368434e654c8de4fa1c628cb92f2420d6fb585d5cadc68fe8f58d562a",
+    ".git/objects/54/49a0d81e8604430dcab8a2499e46bae57481bc": "899e3e22716d7ac326cfaabb9086061342fbb15fb2932939f684e8302aa48464",
+    ".git/objects/55/c159225b3f2ab087476c18f41a89b448bbdbef": "faf6573357a78ba83a29c03d1bed8b0cb85bac5b556d53fd87070026a3ace89f",
+    ".git/objects/5a/6615ec4eb178ffeaac3d7d69df2a96e843b38d": "d04b813df31bfc8652355293cf2f2460ecb4444c4cf17d54d33812c0c0233c7d",
+    ".git/objects/5d/4717eebcda9568730116c6c42c7da3bddfb330": "c4c0268fd03e68fcf00353842c24e44f9da9625fe166c123f730976842f70322",
+    ".git/objects/5d/afc98cc76af23c8f08f40c6c8c0d40b847cf58": "901e87ef3077753eda59dc340ebd4ec3913f330cf7ed202efe81d9f232836658",
+    ".git/objects/5d/b662e939aac56d26df0c831733abb6508d2b6a": "da13744f41c6bda17754e8913a9daf26a19e5b1554962e910cbab3cea064a15e",
+    ".git/objects/5e/a86c12414ab7982e32eb7b94e3b7fd9cdee44a": "3b95f9750fa8fd5c5848680b1c430368d64c85afdb8f965dc3566de720f1562a",
+    ".git/objects/61/c0d82931701dd6aa951a942ed58b863ca8a8ad": "f1d57aa3f2b30a5a0b766f571f6c89a73149138e3bb955bba43f21ee2e5c99a2",
+    ".git/objects/62/1984d740580bd764bf49bc618df99da08aee45": "2bb84818240799aa0def4461f84741175683ef145f203ff96f39169339cf647f",
+    ".git/objects/62/e459974a3677da2f2236336fda3cf224736463": "1b51b0d02b46286ca95553444f50be7de8e32c4b72af90343168d9353649e37e",
+    ".git/objects/63/7fd3f0f94257674a1aa76e726c99ae12a7ed68": "9bee8447f7ebb7ffb5867de87e424a012566451766e3909ff3101157a131fa0b",
+    ".git/objects/63/e2dd250c93ffe620e1a84e39b92485be80db43": "9ee277042754c42b0ecdf745e614e9c3f210cb0c66515e104c8ee3c3bf98ed91",
+    ".git/objects/64/234ba6ed10a11bc3a5f91409da55043dcab545": "4b7bc696c0a29a5640bb048c4a91ca1f29a239624a5e43a474a1b9faffe3c618",
+    ".git/objects/64/5df9983b7cc01ca1f8ad4f079129894830449d": "57c6eed0afe4c47b45cfe4631dff4b44d2f0bb8c9f705e6f435dc5da06124680",
+    ".git/objects/65/464eeae6b050a8054a7fb507209ebfef4215a6": "2c24cc492bada6f18f4d33a7a7da5af1894ac4c6dd27807ed2f173ef21591b1d",
+    ".git/objects/67/ee336f330a7964af1303b937a0cad08f4239f0": "878498ee73282b39b82153e5888215f4b23ee3dd9dbc099eeb53c91ab29bf09b",
+    ".git/objects/70/c53b710298ac539a6aba57cfee6da425a8d0a2": "f57eef168ecc7fda7a15f66899bf778e20ccbeadf6add7d1c6aa8f1f11eeaeaf",
+    ".git/objects/74/72aea4e37288e06073fdbd88ed340b2ff0a93a": "33d0a9589fbc9a965ac7aada66879e8f0c910290c9594d25bf4017732dab190f",
+    ".git/objects/75/cdd4d141275239ed214a7f8b473857497d343d": "79c6bc2749ca0487cfbcc6cd71738e31cd0bfcb0c2b95b43a6f18c9ec8e2ef94",
+    ".git/objects/78/0b5daf13bf473dacd4bda58d402448e8b782e0": "432acba6f8c99adf89092d9a18016dc9825fb09519c50369494b591682e27d7b",
+    ".git/objects/79/9258e07eba224b3528b8f90173a2e9d5a6219d": "6fa1adb1dccc5adf07b91854d7e184974284b70f7f3ac89f2d8c4b32b5e2ec4b",
+    ".git/objects/79/bbd51e35dd4211e370c2a400c69403eaa97082": "2cafe442a165338bc36baacde17535b534ad4197d8b604c586f4fff706989f18",
+    ".git/objects/79/de244c99f92c039d4836fa32ae169d96f42871": "cc54820bcc3c8a379df4c1d5281e8f96eac256deee97de7c439f4c0f1d30ae58",
+    ".git/objects/7a/05d56086e9b4331ce895c87e35d1bda5c4dc79": "9768b9728af5654f61c521a17223f5595dc87f10fa610aaf67fb31148d1cc334",
+    ".git/objects/7a/7cdba1f1817e9b54db61eece34c121e92ce1dd": "e2da9735826ce0a10ab243e62b4f7d4ab466e25d3493085e460d8de185115f9d",
+    ".git/objects/7b/de603dea9923377123fa876fbc7c97926785de": "74980e89120a2c542f1acd6aef5839de6cc9dc7beb47d78892c39fb089c800e5",
+    ".git/objects/7d/53c57aa2431a5f0a5c7280341301c88a6d7758": "0a0b20ed1fac4e4f7bf3a8fe614ce36c1f78299ac5f8a26232828d5a7543703f",
+    ".git/objects/7d/90b1bca4d0287b0f8e24d775208b7bfe837e07": "85853238e4f2c582779f4c50e8063f387986603a669d15ce98bf8aac23cc3625",
+    ".git/objects/80/f7c6ad53adafb07edf9ed74bbad61b8931f120": "efaddba57931066aa56f509090410b5e4ad593b102f1c70bfa1988795ea099f5",
+    ".git/objects/81/caf66f2c582bf0e5a9661bcdf5f269ca03cc74": "ef475ce36a9ee95bb30d96a91db130c8d54b5fb4e4cf7253e52c32bee8495ec1",
+    ".git/objects/84/ccde017df2ff0e29fa1f0fcb8a8637ae8e0d85": "096eafe69b310df1cc2beb15060607bbb3717feb5b45367819c5cfebb84518a7",
+    ".git/objects/85/577985308e4a324f8ffb1b468f190f7490add0": "f4a3e3233663303a743afbcd5c0deb0c509bf30e344e73d3db138f4c41608906",
+    ".git/objects/87/1c966c09f89af68c058514f0f7ecce9f1578d3": "19fc029b47b2652d293e09322a639e3733a58c3f2325baec9d320489d983bc3f",
+    ".git/objects/89/a43df8941709d39ebd5067e635ee5c1c0f5e14": "02710c75b82fb0f9ade3dc668f4e07a39af3d276b895404624546239e419e9c7",
+    ".git/objects/91/9719a1a949987577b3e6b7bbffc9e255119a55": "5bd090fcde8de9f9619b6b1bf3ad1ebd9dea6fabddc82dc32babb1ae64c3fabd",
+    ".git/objects/92/d5f8ffaddf652562dd0403792691ee07243400": "3579c6b287e26d43a53b8781bac78bfb44870c2a5b92333cfa8441df876d6291",
+    ".git/objects/92/ef7606be0d3b2881c75eecfc71e64c1d11d3d6": "ea0e6f540b76e9bdc99898dc7be56390d31c9de5f6566ba2464ef3a7bb1265bf",
+    ".git/objects/93/47c8b271ee7884b85163c0ba920d7bf067b82e": "0d275bc272ab3f1066d94ba4c008c872b7d8732650510854a755765f0fb0ec3d",
+    ".git/objects/93/b4ed0d53bcde7d6614a8cc3305a8a609d74ca7": "2d796d739fc3be3642c0b550cd0bb90c49705cd776b0f6888013db32257de087",
+    ".git/objects/96/ceb1de86bf655f567382282faec16a43b7e854": "f9e78d926d4987d3614ae6e6dc2c2c0de0be9113b4841f4546aa7aaebfb19f30",
+    ".git/objects/97/46ee9a07fb72f1c7d040170ab2cf4911b35433": "ede742990252c3f15eed28ac360d4e93977d889faeb3bbd9b51bb26eea92e338",
+    ".git/objects/99/9f970b51c1591d0d703350f8bda08c20074d36": "d0e4be4a4037ff248248b98e4ae649e0e014a3f93119a5a2756f50bb2cecc1e9",
+    ".git/objects/99/b560f9f56fb912e971c2001472055cc4bff16c": "68e5b8bea22c969a1dd1a4fca07e722993b57c50bb64d775cd9e3e003983ab4e",
+    ".git/objects/9a/5cfd5b7c15a7b3a71d3b60c30dd975f9f367c2": "8f40e16e2cde5c66a38b3ba7ff1dadcbe3ebaacd1187e656d63f50f33b3cfe60",
+    ".git/objects/9d/31c48965eb947848c83cb4c6e71eff349e4e16": "265c953217315050fa0f9f2cbc4a2aff6aeb6d4e55ed92fc60f6cde0bfb1ec2b",
+    ".git/objects/9f/1d21e8df7b52b8514f62f9a542bee8c5dc5f80": "441d860f2e7c23411bce734f82a0639afa4e86ee37499484df91ba5ce55fb9da",
+    ".git/objects/9f/b700d0912d40df21839f7cc3ae5f74d5458b6b": "53a5da3f87b291dc9c90b65627bf989f991cc5caa4e67587307c6d83d10390cd",
+    ".git/objects/a1/9fa53c266a23aa7cee24a9d77a18302a90bf99": "75c974517936f6d01eff157dc542b4107cfb4b9df2eebbf4bfa4dda0aa8b5b56",
+    ".git/objects/a1/c1d041da54b581ce31c90a332f256c1b5f21d7": "8cbaf11c4be6d6246e2b02e95d0ee2b777b7c8fbdd9a7515a903c67472e5be04",
+    ".git/objects/a2/417390c5d1b51cfd901100d41f4489fdad8289": "7ca3e70fb8baa624a51918559af4828c6d9e4957bf7748eacec023fedbcccc7a",
+    ".git/objects/a2/f9621945179ff138a5bbbe3fb08aa84c85fa2d": "5130d2ca6cffd1c3f330062dbc7ea401282c9500e73971fc579df2febd1fa4c0",
+    ".git/objects/a4/677df24a113e4ffa0ebc6b68987ffd6ef85385": "08fe6000af5b57fba11edf4e64f5a0ef34bd002447e64859bcbe91cca1f18223",
+    ".git/objects/a6/224ef1f7ed183042a654aabd86c9d1e44b9638": "6472fc49edec3245f3ef24896002ecf862b29d4a602f1d2f8a4a39754e24c3c5",
+    ".git/objects/ab/50eafe806656503571da9563d2169c3bb525f5": "7064738b7acb4aeac489e68661718c2bc7add9bb59924e778d450e86c237dc40",
+    ".git/objects/ab/e29eda93ccc87dc0e2dc711892e9c572a39e35": "988202de0df85157a921dce6ec0bb5787e2ba3d057afdf7566fcd6ad42e080a9",
+    ".git/objects/af/2937281ee3b78b60760c7eb86a65ea08fe8dc7": "0ba6efd8b28769e36ef2a29b7141945a44dbb5bf52858b9d247615e4994d559a",
+    ".git/objects/af/769a8d3b89c71aeb20ba4f83ca127de7ee9df6": "bdac0be383ab9422f33b236bce6cfd502e0ffcfb560e77ecd1f7ba4d5f511bf7",
+    ".git/objects/af/f84a40d87dcedc8758ef26b4ba52aefe35a1db": "7163a190cc83667ab46f0815f745b16372e437d001917df226dd5308b295b259",
+    ".git/objects/b3/3cebb08fe97ac87c0478a8f9e718e1251d13c6": "32edfd3e58dd1e706e90cfffae45c7cd4be5814285f77eba99e29abc5d38be02",
+    ".git/objects/b5/3d285985c6131ffec2b651387b49989c34e288": "fbfae98f4637ffab07d9f7b849908ad39c7f222f555d141bca4ceb1bcf4d8163",
+    ".git/objects/b8/e18217eda4dd90dd4fea31c4d46e38feb39b4d": "b13678df1c331ff7edb1d77342bccd8443f6c34b0d3e14e3da33e6ea45b3451c",
+    ".git/objects/ba/62eda6e0521a8f6ce4f320559cd71da5017ef2": "ff9805ebd8b9d2c72eb0e61a7b42d93eff725d2a4e6701c7ca8a5df71ea1efd9",
+    ".git/objects/ba/be122293e18f2ba34930896d0159507868e8ed": "d1d1f47af3aef33a345165efc4d30853fe2da67af3206b12e497a4ca79b505a5",
+    ".git/objects/bc/2514ad773698c80405282c3048f49449f2d0f2": "f6f870b7d38d1af16eb0b94ea55d06ed3b355d49223fba036e62c293fcf871b4",
+    ".git/objects/bc/7c9c0a36035ee1519242ce80bfeca7693c8c8e": "a0bb2f717a8629e71ea90b548bde721d0df111f87bee5cdb18478e764dc92b9e",
+    ".git/objects/c0/47dc9af956c7f0af84ca51efa6de66e7d1ba52": "c64dd72817b2c108d41f2e256448fea365124c5fdc29f932a24035d2325eb0d1",
+    ".git/objects/c0/da6d448583711ce5a9aa24976e0a7faaaeb0cf": "789c060431a4387e1cfe0a8ef2bd50412a71aa6070223d282ae2fecd67bcde48",
+    ".git/objects/c2/a33c6a1d01b930aaf60b9171308b65c33dcbba": "a7b71e824120bdc715b1e521fddd60a0ac5270ff1ab05cb2dfafe4421d6c746a",
+    ".git/objects/c4/d978ca7c06f98527b0d239bb69f7bee0c359cd": "b1bf5423843565840cc6aee65ec05df8ff84fa405fbb297ba0b571731a970250",
+    ".git/objects/c5/01979ee39be0e0093f2b1c1d4a9ca269e0476d": "e1c976dc0df0b009b9e717795274d3758de2804ed3055b29d0a16390aa20e075",
+    ".git/objects/c5/1cc6e1a7901d3d9abbd2eec0306023ef751101": "aa0cefbd1da1eab830eaea0cb8151b3d83aa784c7af31fe0991ed7ace039d495",
+    ".git/objects/c6/906eddd7b38a2fef4840a131d16e459eaa2c41": "079b7967b85762f17048399a7fdd71e543d044e01aedccf1f5191f63c0c502c8",
+    ".git/objects/c8/fb15448d3d91a3758551a33aecd7a96a7ff283": "d49ad513ffd48c0f9655b02801b78162fbcaa425d727a03e39a877165f8f4de7",
+    ".git/objects/cc/44fb522514f050571f65640a8c01cece1c532a": "48d251057105325efdbe75c650cbf5de8bd8333d8a165e83b8832b9af06a7d15",
+    ".git/objects/d0/53e92b172b7867509df2a4cd8a5ccc82794bf6": "9dd957a98f13e14460fa9b0335a72ca2465b25d62944976d2610809e526ca8b7",
+    ".git/objects/d0/b9e1da339365af5dcbca0d09864d34d2868c36": "7ed252a9e7c55fd18580aee5b750d92bacbe525edd157ce8ac49aff2da032d2e",
+    ".git/objects/d1/d534dd321e299f8d3a3e558bb3daf046ad6508": "499f1020b76022a981b5ef50045fc066c9175cca56216e79683ff81a5feaa688",
+    ".git/objects/d3/dc1ee38c1e6a21b116406f9967a2fa385eeb9f": "8ddf24b334059b19ce8b65dfd47d75cd304254969f95fbc5015487ea780db670",
+    ".git/objects/d4/bfb5d96a49701f8d156e6af31ca1c72566ece8": "15487d947e91b7d177b7f1fafa1b3b5e77aa1d144486c62febd9a84ec1c28e7d",
+    ".git/objects/d4/d4596f92d0851972a1442654b8dcc4a3cb8818": "423873435b7203d2346f0b015c498ddf1e4f7422cc70e4fc2caa6570fb97d09b",
+    ".git/objects/d6/07eeaffba26995c2d59427070c1b8e9f8a2adb": "3335ac30fa6de1c09f13246494db119fb37fb3770014e7db0e4a84592a522a75",
+    ".git/objects/d9/6569fb3081da84e0d4e4670d6f972a54432d85": "782994a5bef29eed56787f7987140ac380047fd1cf3998eb6a6aee7e88ac576a",
+    ".git/objects/d9/d82973988632801adf64446582f8009fc2b8c9": "1efdb93f17ea95c1b7605f2be97a5b4374a425b29233fc37557b3b9ef771de12",
+    ".git/objects/e0/611bd77893a62e050c7594706e0d8c8e6a9128": "d3702ac72becea67b9ea16771a8d674cfb31da95a7ea65c6c28dce141cb84afc",
+    ".git/objects/e1/b9775f10614d91e89e63439f59c2fa2b308a99": "5e1c45b40271511815c7c6cda68fc10d39e46343b85449522774c510a68187f2",
+    ".git/objects/e3/658dae05b3e33f1bb38a32e0b44f7039c77fba": "1dd316a30ca231084400c47b42162e8d1eff8f1011756b4be8371684aa1b54e0",
+    ".git/objects/e4/84cc59586d98e07373e7542d53cba5f881ad5c": "9db243eccc28fdf539fb4fe165f4bb92bf79864dbfecd420497601c5300e4c15",
+    ".git/objects/e7/d9a54b89f53b6e8d8d4a09b38f288660136d0b": "c90eceaf195480a3945f7155dafbade0b77d0337a9f3144bbc2f5707ed732119",
+    ".git/objects/ee/79b9eb2692b2a9ea4694e51bdc555c6e0a2ae2": "02d739a72936f57ec693840d796ecd4648ba43d54005ada889ed2c46e1f331b7",
+    ".git/objects/ef/26eac1005b6e2d6aa6d96edde22c78ba61b9d9": "51649b750161e83ac8409f3c9502b40c8de9b96d8f8892e196353f6c6538f5e5",
+    ".git/objects/ef/b09f53fa7e6684873f5fc7791feb8155a87202": "e88442c6e0d41b96b288afbd8539db0c0a932bdda33810f70443bb8a348e7617",
+    ".git/objects/f5/73f0b60eca31a468283cb9037bbbdebe620bd4": "745ae6bb6000a1894bbc09b620769df32927a133d4314da05f2410ff394087f7",
+    ".git/objects/f9/38d133cff248c0919d070d4a480966f6f0128a": "9c2113d562bc5331ceb17f220cd115df43278185d227c024a08e81dd686ffed4",
+    ".git/objects/f9/88343ac0bfbdf243c1a30b55b66c0ead3ad4e4": "1066060a813f400f5bf54caa56e8572fa2fdebdc3326e9ed68527cf126a6e5a6",
+    ".git/objects/fa/b6a8ab553ebaab9751b004aaba8b35c6e2366a": "1b9663aa3a7ee407bbae5ef48358111ee03f0d0efea9208cced655d7d4c0f6b1",
+    ".git/objects/fc/bef8e4adf1918959dda7f1e73955faf0171d08": "641a22ac6aabb8ee7243e550d0b22aeb11a09251d573f01f65dc5fac8cd9422b",
+    ".git/objects/ff/7fe7a2e24d2e653498e8eeec3d733b7f72a53d": "e3207055fde12b712ca4094d03b15bb5e39b9bfd6a5aa67a64d8a11cdae42225",
+    ".git/refs/heads/master": "279c6cb9eaaf70b22e15a16a2831aa7623ef4c7ee19b9947f48826d29a3f82f4",
+    "Docs/ATTRIBUTION.md": "ac3ee2b66ec3f7b4178536b2aa9867eac809f40cb5c74654f97213c071af87fa",
+    "Docs/CONVENTIONS.md": "154604ca40f3468f2ab996052ad0f312ab93de28d1e07c8a1680fb8fe6356ab0",
+    "Docs/DECISIONS.md": "4dce8129e7a877042f6710f55fa724558242e2b70ecb6d024783d414d3eb3416",
+    "Docs/FAQ.md": "0f56cf3ac57023d3ba7c2a30e39194be523b1ac3990d309092dc32d268c0efe3",
+    "Docs/GEOSTATS_PRIMER.md": "315d17517ac794c3db443f94237b8eadc3d316cb5e5287505e0946c50a5e56d9",
+    "Docs/IMPLEMENTATION_STATUS.md": "990ef7b244e8a41cb278e6af8d1d8c3433bec0aaf8f7ec7d01ea9c6e5ab0c774",
+    "Docs/PROFESSIONAL_USE.md": "03cecf43039ec7ac735e37a295739d6633b1da460464f4e1a412f12254b72bf0",
+    "Docs/QUICKSTART.md": "8fb324d5cf30cf262ef6d43bb9296e71183f520a8aa8131484c70d79ec28d410",
+    "Docs/REVIEW_REMEDIATION.md": "dbc395542c3eedd40c166a760ab743a674f40ed820344cc130c8305faf4bbc88",
+    "Docs/SPEC_DEVIATIONS.md": "8a93049526fb8e94b9bffcf8f229f55641c1cb0a4e08e536d118d9f606d95025",
+    "Docs/TUTORIAL.md": "14a033a667c99751aa0c1f67e6227a28a9397eb064a3a21eebecc0a7607b3eba",
+    "Kriging.uplugin": "c302c93067d6af259d773913af1139a402be9731ed2324a7811e1192c2d148a2",
+    "LICENSE": "3c3ea46bd8c2ea8b7af6049a9fa1d3d097d57987f1f5842c09dd6cf18cd7735e",
+    "README.md": "a87bc51938694838cb20973f94c60e42d4a9725ff19c9be39f087f2ce683719c",
+    "Samples/SAMPLES_README.md": "44fdfa492e4c87892dac4a3e009bcc338aad71fb69975d2a81271061c6432278",
+    "Samples/generate_samples.py": "1c20cf3bf4f75af94bb034df2a8bb0453c5b695a3e156a41f835014b78a67375",
+    "Samples/ore_body_3d.csv": "3d30626dc57735b26bab13c64dddfdb415d2884d625085171b74816cd48e6ca1",
+    "Samples/playtest_deaths_2d.csv": "a63749e04cc7012c6adf3805de30cb6229308b741f0579bcaaaab7b82f2fb4a9",
+    "Samples/temperature_timesteps.csv": "14259547ebcd7effd0ea05ef416663f5b5e4a11fa6f60b679499dbe770a03146",
+    "Source/KrigingBlueprint/KrigingBlueprint.Build.cs": "38243a50f5caa5a5bfdb0d040e1b882eb8154bdb1917172bd9a3e9bbead619c6",
+    "Source/KrigingBlueprint/Private/KrigingBlueprintModule.cpp": "fabdf7cd2a7dfacc2d87ca630aedb010de3e9b741f96a34abb04a1e37eac261f",
+    "Source/KrigingBlueprint/Private/KrigingBuildModelAsync.cpp": "2bbe9b3b37ac47f774c5beb6d4f3785dcf059f7c05e9c713e206b54eab378288",
+    "Source/KrigingBlueprint/Private/KrigingConversions.h": "faff14b806c487049661d65da70f4e59de284613bb230d2c2c4df9ed36e0b6fc",
+    "Source/KrigingBlueprint/Private/KrigingLibrary.cpp": "f6e519991cebe17366accab43a52235bc20222abaafc54c803177fa75cd815d7",
+    "Source/KrigingBlueprint/Private/KrigingModel.cpp": "af47b0f5c1302395fd29fc9eba47e21f99a1191150ef64f29cd63062fc1c89d3",
+    "Source/KrigingBlueprint/Private/Tests/KrigingBlueprintAutomationTests.cpp": "e5e2edeee3ddbddbd1c2bb9297a26167c2c5e0abd3edcd5a4ec10432be325567",
+    "Source/KrigingBlueprint/Public/KrigingBuildModelAsync.h": "7a113e77dcb9b33bb2308e788187561a4ed4f74abdddac6a1deaf20546288d05",
+    "Source/KrigingBlueprint/Public/KrigingLibrary.h": "c7bc8d356f37ec1724b086ccbca673f16b5b003a1b6f8e9fec847166000ea89b",
+    "Source/KrigingBlueprint/Public/KrigingModel.h": "1675249ccc8b30622ced7003243a2477dd3f02642002afd83d230ae20ac1f8ec",
+    "Source/KrigingBlueprint/Public/KrigingTypes.h": "e006451f08d614e2d43db6cb0a86cffd6d4b63d3cd0e407048265ee6d9414ac8",
+    "Source/KrigingCore/KrigingCore.Build.cs": "ac0d0e2d2469a844ca5d6785174a5c3d6765a8fb1634b5de2dc0f652968f4449",
+    "Source/KrigingCore/Private/KrigingCoreModule.cpp": "ccae0708bbcdd08d687f69da1e30fadea20836aa1e63511523d6fda8e39024d2",
+    "Source/KrigingCore/Private/Portable/KrigeBessel.h": "7f2ce7696209e240095a4034f24611c40ba390d972586371aa6f567398ad9a6e",
+    "Source/KrigingCore/Private/Portable/KrigeMarchingCubesTables.inl": "a0f99bf9c842fe01068f74743f358161c8bcf80e73abe6f66b05df85baf49855",
+    "Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp": "57752af33fff122abda588c6c2e550fd9e9757ce7069b521bb58a19070a3faf7",
+    "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+    "Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp": "f04926de00ad7b127eb6383c5dc2a1dd08c5b9fadc2ed3b0baaf8ca61ace8234",
+    "Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp": "5dcf562bade9ed4463efff2015225df87e944faee976ac39e57fabf9495084b4",
+    "Source/KrigingCore/Public/KrigeKdTree.h": "723761bb1ab1c9b0c2824417de9a5d271daa5662f1c99fd5f7ef80825fcc22ef",
+    "Source/KrigingCore/Public/KrigeLinearSolve.h": "ecca46cbc9381cc813fc9de6032182caa1b424f1600e96fbcc5cdb23d3ffd587",
+    "Source/KrigingCore/Public/KrigeModel.h": "791e3390d822f0504cbe68a4a612901080ba2b666bcd79d52da27d0cb3a509e6",
+    "Source/KrigingCore/Public/KrigePortableAnalysis.h": "3852372f67e0d0141ddbcfeb50b080752d5c0c37891c1e0e766b7c2e79ef225a",
+    "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+    "Source/KrigingCore/Public/KrigePortableMarchingCubes.h": "a6fbc40ba8a3ced62d610cc0b923e04aff385727175754abeba3a71e19d43ee4",
+    "Source/KrigingCore/Public/KrigeTransform.h": "b4328375bfd3d1c3f8ffa9ceb121228700b6a96fc8420cb3827d6f81f9657ca0",
+    "Source/KrigingCore/Public/KrigeTypes.h": "8c5afd6495ac59bbdc0dcad9dcca62337ea17f9629fc879eadce2a599b93cb28",
+    "Source/KrigingCore/Public/KrigeVariogram.h": "162fdd7cc9a023cd44b600f05bc69f66414c4f8c75f76279ded5449d84b952ea",
+    "Tests/Golden/RANGE_CONVENTIONS.md": "b0e4b22a316f022a83c3e1500b50d9150bae10aae508df2e748efa40159035e2",
+    "Tests/Golden/generate_goldens.py": "f46caa2003ff1ac3a04d0fd45b34beacd92689af5eb9ef3a03e6a0b19b3024ae",
+    "Tests/Golden/goldens.json": "1aab8fa80bbb5e0587ef783f30726b616553972dd0a1f0f822c1bab9d66d2370",
+    "Tests/Review/golden_probe.cpp": "b8ae602c4567ee9abec4a7af35255c403a0c5c26d3290ff5201e83cd22c59102",
+    "Tests/Review/numeric_probe.cpp": "365d5c189153de99f71e0b5f35ebd06bd8d5eaf34c21a56d29ffdb11fa5ad0eb",
+    "Tests/Review/reference_probe.cpp": "51401e9c11c3c9b821a5b7e4e8f4d66c2c2983b90b0c8516bdb6a7814b561f44",
+    "Tests/Review/requirements.txt": "1cf07a9f40cff97a9427fdcc806870f98e190249aa4863be88c96a54e40285a9",
+    "Tests/Review/run_cmake_gate.py": "d74b30a3df38ab52088bcdc1d70e803c7784c352629bb8d11c8857989bc08dca",
+    "Tests/Review/run_verification.py": "633b86eb7b6d38ef2af051ddfd168efb6cab1c9ac7821f3c79b6d26026bcb2f8",
+    "Tests/Review/validate_goldens.py": "6186c8164defa10082a88f88eb6bfbc3a70f6c167ccfc887c20d1fd34b1ce07f",
+    "Tests/Review/validate_numerics.py": "0a9bff0db2ac7b1cd23158411ba1f519165f6494466585ca74ae5e0632949559",
+    "Tests/Review/validate_reference.py": "af566a6ae3e51f38d889ac08a978a47b2c3fc903a8ab382de812529bf8af208a",
+    "Tests/Review/validate_static.py": "8ab96ed1d10b1d9bbd9966ff02ec9acdbf6ad6929ac5dd5672cf92b5c8be1c57",
+    "Tests/Standalone/CMakeLists.txt": "3df0344f20556cbb8aecd86d36cae593115d55f51835eb0402897d7cb8db6b8e",
+    "Tests/Standalone/UnrealStubs/Misc/AutomationTest.h": "5cb25d9b5f3d08bbebd1bd4a0ef42afbda45098d0e558bddfa671220bd5a1401",
+    "Tests/Standalone/UnrealStubs/Modules/ModuleManager.h": "127d892c00123c8db71677390778e1aef54f13c78bccd2fabf951fc03e625f19",
+    "Tests/Standalone/allocation_probe.cpp": "5b8f9a1bd6e8f5cf8c654b2094504fe41d9c056f1513c3d75a3e3dafaab1777e",
+    "Tests/Standalone/test_analysis_smoke.cpp": "fadecdb27e0c8fc927a5b6f9ca154b17e6d8456d39f66d6aa8d392b420d01ba3",
+    "Tests/Standalone/test_core.cpp": "d4d0f91cbcfeaa343c2b4d10ad5f995860e71e0d43046d59c8bb689cd64b65fe",
+    "Tests/Standalone/test_marching_cubes.cpp": "ee5756ee0f707191e7325b5ae5e5b3c360b6d95a92944fb156988a8ab0314e4f",
+    "Tests/Standalone/test_mc_tables.cpp": "f8b425a3e9cb135f31093252a25f0a35f5dd103403ced1270a42697f14fe9e4e",
+    "ThirdPartyNotices/BOOST_LICENSE_1_0.txt": "84c6ef3ea9e3254a54d0acf5d3e0c61ae011b8fef7dd6940591cf060e6380a8f"
+  },
+  "started_utc": "2026-08-25T15:10:53.744865+00:00",
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Standalone",
+        "-B",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_CXX_FLAGS=-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "-DCMAKE_EXE_LINKER_FLAGS=-fsanitize=address,undefined"
+      ],
+      "duration_seconds": 1.2274691170023289,
+      "name": "gcc_asan_ubsan:configure",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (1.1s)\n-- Generating done (0.1s)\n-- Build files have been written to: /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "--parallel",
+        "1"
+      ],
+      "duration_seconds": 39.697493860992836,
+      "name": "gcc_asan_ubsan:build",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "[  6%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp.o\n[ 12%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp.o\n[ 18%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp.o\n[ 25%] Linking CXX static library libkriging_portable.a\n[ 25%] Built target kriging_portable\n[ 31%] Building CXX object CMakeFiles/kriging_core_tests.dir/test_core.cpp.o\n[ 37%] Linking CXX executable kriging_core_tests\n[ 37%] Built target kriging_core_tests\n[ 43%] Building CXX object CMakeFiles/kriging_allocation_probe.dir/allocation_probe.cpp.o\n[ 50%] Linking CXX executable kriging_allocation_probe\n[ 50%] Built target kriging_allocation_probe\n[ 56%] Building CXX object CMakeFiles/kriging_mc_sphere_test.dir/test_marching_cubes.cpp.o\n[ 62%] Linking CXX executable kriging_mc_sphere_test\n[ 62%] Built target kriging_mc_sphere_test\n[ 68%] Building CXX object CMakeFiles/kriging_mc_table_test.dir/test_mc_tables.cpp.o\n[ 75%] Linking CXX executable kriging_mc_table_test\n[ 75%] Built target kriging_mc_table_test\n[ 81%] Building CXX object CMakeFiles/kriging_analysis_smoke_test.dir/test_analysis_smoke.cpp.o\n[ 87%] Linking CXX executable kriging_analysis_smoke_test\n[ 87%] Built target kriging_analysis_smoke_test\n[ 93%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/KrigingCoreModule.cpp.o\n[100%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp.o\n[100%] Built target kriging_unreal_source_syntax\n"
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "--output-on-failure"
+      ],
+      "duration_seconds": 8.364276136999251,
+      "name": "gcc_asan_ubsan:ctest",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "Test project /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n    Start 1: kriging_core_properties\n1/5 Test #1: kriging_core_properties ...............   Passed    6.26 sec\n    Start 2: kriging_global_query_no_allocations\n2/5 Test #2: kriging_global_query_no_allocations ...   Passed    1.81 sec\n    Start 3: mc_sphere_test\n3/5 Test #3: mc_sphere_test ........................   Passed    0.16 sec\n    Start 4: mc_table_test\n4/5 Test #4: mc_table_test .........................   Passed    0.01 sec\n    Start 5: analysis_smoke_test\n5/5 Test #5: analysis_smoke_test ...................   Passed    0.11 sec\n\n100% tests passed, 0 tests failed out of 5\n\nTotal Test time (real) =   8.36 sec\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Standalone",
+        "-B",
+        "/tmp/kriging_gcc_release_rguo2sug",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "duration_seconds": 0.9686809220002033,
+      "name": "gcc_release:configure",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (0.9s)\n-- Generating done (0.1s)\n-- Build files have been written to: /tmp/kriging_gcc_release_rguo2sug\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/kriging_gcc_release_rguo2sug",
+        "--parallel",
+        "1"
+      ],
+      "duration_seconds": 40.52165571600199,
+      "name": "gcc_release:build",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "[  6%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp.o\n[ 12%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp.o\n[ 18%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp.o\n[ 25%] Linking CXX static library libkriging_portable.a\n[ 25%] Built target kriging_portable\n[ 31%] Building CXX object CMakeFiles/kriging_core_tests.dir/test_core.cpp.o\n[ 37%] Linking CXX executable kriging_core_tests\n[ 37%] Built target kriging_core_tests\n[ 43%] Building CXX object CMakeFiles/kriging_allocation_probe.dir/allocation_probe.cpp.o\n[ 50%] Linking CXX executable kriging_allocation_probe\n[ 50%] Built target kriging_allocation_probe\n[ 56%] Building CXX object CMakeFiles/kriging_mc_sphere_test.dir/test_marching_cubes.cpp.o\n[ 62%] Linking CXX executable kriging_mc_sphere_test\n[ 62%] Built target kriging_mc_sphere_test\n[ 68%] Building CXX object CMakeFiles/kriging_mc_table_test.dir/test_mc_tables.cpp.o\n[ 75%] Linking CXX executable kriging_mc_table_test\n[ 75%] Built target kriging_mc_table_test\n[ 81%] Building CXX object CMakeFiles/kriging_analysis_smoke_test.dir/test_analysis_smoke.cpp.o\n[ 87%] Linking CXX executable kriging_analysis_smoke_test\n[ 87%] Built target kriging_analysis_smoke_test\n[ 93%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/KrigingCoreModule.cpp.o\n[100%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp.o\n[100%] Built target kriging_unreal_source_syntax\n"
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/tmp/kriging_gcc_release_rguo2sug",
+        "--output-on-failure"
+      ],
+      "duration_seconds": 0.33305059000849724,
+      "name": "gcc_release:ctest",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "Test project /tmp/kriging_gcc_release_rguo2sug\n    Start 1: kriging_core_properties\n1/5 Test #1: kriging_core_properties ...............   Passed    0.23 sec\n    Start 2: kriging_global_query_no_allocations\n2/5 Test #2: kriging_global_query_no_allocations ...   Passed    0.07 sec\n    Start 3: mc_sphere_test\n3/5 Test #3: mc_sphere_test ........................   Passed    0.01 sec\n    Start 4: mc_table_test\n4/5 Test #4: mc_table_test .........................   Passed    0.00 sec\n    Start 5: analysis_smoke_test\n5/5 Test #5: analysis_smoke_test ...................   Passed    0.01 sec\n\n100% tests passed, 0 tests failed out of 5\n\nTotal Test time (real) =   0.33 sec\n"
+    },
+    {
+      "name": "clang_release",
+      "reason": "clang++ is unavailable",
+      "status": "SKIP"
+    },
+    {
+      "command": [
+        "/tmp/claude-1000/-mnt-c-Users-HomePC-Documents-ClaudeCode-kriging/edcebd4e-df85-4ad7-8177-06ccdd3b8e8d/scratchpad/venv/bin/python",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/validate_static.py"
+      ],
+      "duration_seconds": 1.8360448669991456,
+      "name": "targeted_static_guards",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"checks\": [\n    \"manifest declares exactly the KrigingCore and KrigingBlueprint runtime modules\",\n    \"both manifest modules have a Build.cs and an unambiguous module entry point\",\n    \"every Source/ build module is declared in the manifest and vice versa\",\n    \"unverified and out-of-spec subsystems are absent from active tree\",\n    \"portable and compatibility public headers are present\",\n    \"all Krige-prefixed quoted includes resolve across both modules\",\n    \"active source avoids crash-only checks and exceptions\",\n    \"model build is transactional\",\n    \"kriging queries solve the system and use fixed global workspace\",\n    \"duplicate merging cannot collapse transitive chains\",\n    \"drift basis and external-drift failure handling are guarded\",\n    \"Mat\\u00e9rn is continuous at nu=10 and CPU structures are analytic\",\n    \"local factorization cache verifies keys and avoids full resets\",\n    \"degradation and variance clamps are bounded and reported\",\n    \"bias correction is entry-point invariant\",\n    \"LOO fast path is eligibility-gated and checked against bounded brute force\",\n    \"tiled variance and GPU claims are removed instead of papered over\",\n    \"standalone gate covers the load-bearing core properties\",\n    \"numeric and independent matrix validators exercise shipped C++ with pinned references\",\n    \"CMake gates are process-isolated and verification provenance excludes generated bytecode\"\n  ],\n  \"scope\": \"targeted package topology and isolated source guards; not compilation\",\n  \"source_sha256\": {\n    \"Source/KrigingCore/Private/Portable/KrigePortableCore.cpp\": \"ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18\",\n    \"Source/KrigingCore/Public/KrigePortableCore.h\": \"93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41\",\n    \"Tests/Review/run_cmake_gate.py\": \"d74b30a3df38ab52088bcdc1d70e803c7784c352629bb8d11c8857989bc08dca\",\n    \"Tests/Review/run_verification.py\": \"633b86eb7b6d38ef2af051ddfd168efb6cab1c9ac7821f3c79b6d26026bcb2f8\",\n    \"Tests/Review/validate_numerics.py\": \"0a9bff0db2ac7b1cd23158411ba1f519165f6494466585ca74ae5e0632949559\",\n    \"Tests/Review/validate_reference.py\": \"af566a6ae3e51f38d889ac08a978a47b2c3fc903a8ab382de812529bf8af208a\",\n    \"Tests/Standalone/CMakeLists.txt\": \"3df0344f20556cbb8aecd86d36cae593115d55f51835eb0402897d7cb8db6b8e\",\n    \"Tests/Standalone/allocation_probe.cpp\": \"5b8f9a1bd6e8f5cf8c654b2094504fe41d9c056f1513c3d75a3e3dafaab1777e\",\n    \"Tests/Standalone/test_core.cpp\": \"d4d0f91cbcfeaa343c2b4d10ad5f995860e71e0d43046d59c8bb689cd64b65fe\"\n  },\n  \"status\": \"PASS\"\n}\n"
+    },
+    {
+      "command": [
+        "/tmp/claude-1000/-mnt-c-Users-HomePC-Documents-ClaudeCode-kriging/edcebd4e-df85-4ad7-8177-06ccdd3b8e8d/scratchpad/venv/bin/python",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/validate_numerics.py",
+        "--compiler",
+        "c++",
+        "--output",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Results/NUMERIC_VALIDATION.json"
+      ],
+      "duration_seconds": 10.206879596997169,
+      "name": "special_function_reference_validation",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/tmp/claude-1000/-mnt-c-Users-HomePC-Documents-ClaudeCode-kriging/edcebd4e-df85-4ad7-8177-06ccdd3b8e8d/scratchpad/venv/bin/python",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/validate_reference.py",
+        "--compiler",
+        "c++",
+        "--output",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Results/INDEPENDENT_REFERENCE.json"
+      ],
+      "duration_seconds": 8.948781346000032,
+      "name": "independent_numpy_matrix_validation",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/tmp/claude-1000/-mnt-c-Users-HomePC-Documents-ClaudeCode-kriging/edcebd4e-df85-4ad7-8177-06ccdd3b8e8d/scratchpad/venv/bin/python",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/validate_goldens.py",
+        "--compiler",
+        "c++",
+        "--output",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Results/GOLDEN_VALIDATION.json"
+      ],
+      "duration_seconds": 7.909159772010753,
+      "name": "pykrige_golden_validation",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "PASS: 11 scenarios, max scaled value error 3.320e-14, max scaled variance error 1.132e-14\n",
+      "stdout": ""
+    }
+  ],
+  "tools": {
+    "clang": "unavailable",
+    "cmake": "cmake version 4.2.1",
+    "ctest": "ctest version 4.2.1",
+    "gcc": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "warnings": [
+    "WARNING: this run's package versions do NOT match the pins in Tests/Review/requirements.txt; results below were NOT produced with the pinned versions (numpy: pinned 2.3.5, installed 2.5.2; scipy: pinned 1.17.0, installed 1.18.1)."
+  ]
+}

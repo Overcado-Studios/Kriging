@@ -1,0 +1,44 @@
+status: PASS
+started_utc: 2026-08-25T15:10:53.744865+00:00
+finished_utc: 2026-08-25T15:13:00.123539+00:00
+platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+gcc: c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+clang: unavailable
+cmake: cmake version 4.2.1
+
+pinned package versions:
+- pinned_versions_matched: False
+  - numpy: pinned=2.3.5 installed=2.5.2
+  - pykrige: pinned=1.7.3 installed=1.7.3
+  - scipy: pinned=1.17.0 installed=1.18.1
+- WARNING: this run's package versions do NOT match the pins in Tests/Review/requirements.txt; results below were NOT produced with the pinned versions (numpy: pinned 2.3.5, installed 2.5.2; scipy: pinned 1.17.0, installed 1.18.1).
+
+steps:
+- PASS: gcc_asan_ubsan:configure (1.227s)
+- PASS: gcc_asan_ubsan:build (39.697s)
+- PASS: gcc_asan_ubsan:ctest (8.364s)
+- PASS: gcc_release:configure (0.969s)
+- PASS: gcc_release:build (40.522s)
+- PASS: gcc_release:ctest (0.333s)
+- SKIP: clang_release
+- PASS: targeted_static_guards (1.836s)
+- PASS: special_function_reference_validation (10.207s)
+- PASS: independent_numpy_matrix_validation (8.949s)
+- PASS: pykrige_golden_validation (7.909s)
+
+special-function metrics:
+- Bessel max relative error: 5.953343e-15
+- Structure max absolute error: 2.875478e-14
+- AS241 max absolute error: 2.664535e-15
+
+independent matrix-reference metrics:
+- Maximum scaled value error: 4.551914e-15
+- Maximum scaled variance error: 1.110223e-15
+
+independent PyKrige golden-file metrics:
+- Maximum scaled value error: 3.319567e-14
+- Maximum scaled variance error: 1.132427e-14
+
+limitations:
+- No Unreal Engine installation was available; UnrealBuildTool, UnrealHeaderTool, BuildPlugin, and the UE automation smoke test were not run.
+- This evidence validates the active portable numerical core, not removed editor, renderer, PCG, content, Cesium, Landscape, or packaging subsystems.

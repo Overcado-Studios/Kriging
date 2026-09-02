@@ -1,0 +1,230 @@
+{
+  "compile_command": [
+    "c++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/golden_probe.cpp",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+    "-o",
+    "/tmp/kriging_golden_440y18k5/golden_probe"
+  ],
+  "compiler": "c++",
+  "failures": [],
+  "goldens_generated_utc": "2026-08-25T10:50:40.064047+00:00",
+  "goldens_generated_with_versions": {
+    "numpy": "2.5.2",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pykrige": "1.7.3",
+    "python": "3.12.3",
+    "scipy": "1.18.1"
+  },
+  "goldens_path": "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Golden/goldens.json",
+  "metrics": {
+    "maximum_scaled_value_error": 3.319566843629218e-14,
+    "maximum_scaled_variance_error": 1.1324274851176597e-14,
+    "value_tolerance": 1e-09,
+    "variance_tolerance": 1e-09,
+    "worst_value_case": "universal_linear_3d_gaussian[5]",
+    "worst_variance_case": "universal_linear_3d_gaussian[7]"
+  },
+  "notes": [
+    "PyKrige independently computes ordinary/universal-linear kriging predictions and variances using its own built-in spherical/exponential/gaussian variogram models and its own dense linear solver.",
+    "The C++ probe parses the same scenarios (frozen in goldens.json's wire_protocol field) and calls the shipped Model::Build / EvaluateWithVariance public API.",
+    "Range parameters are translated between the two libraries' conventions before comparison; see goldens.json['range_convention_mapping'] and RANGE_CONVENTIONS.md."
+  ],
+  "per_scenario": [
+    {
+      "a_cpp": 5.0,
+      "max_scaled_value_error": 2.9094559187447993e-15,
+      "max_scaled_variance_error": 2.853433490587359e-15,
+      "method": 1,
+      "name": "ordinary_2d_spherical",
+      "r_pykrige": 5.0,
+      "shape": "spherical",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 4.0,
+      "max_scaled_value_error": 1.6350984754903632e-15,
+      "max_scaled_variance_error": 1.5245352754524683e-15,
+      "method": 1,
+      "name": "ordinary_2d_exponential",
+      "r_pykrige": 12.0,
+      "shape": "exponential",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 4.0,
+      "max_scaled_value_error": 7.918111890193694e-15,
+      "max_scaled_variance_error": 1.0227929614359255e-14,
+      "method": 1,
+      "name": "ordinary_2d_gaussian",
+      "r_pykrige": 7.0,
+      "shape": "gaussian",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 3.0,
+      "max_scaled_value_error": 2.8164607466513374e-15,
+      "max_scaled_variance_error": 3.58046925441613e-15,
+      "method": 1,
+      "name": "ordinary_2d_exponential_filtered",
+      "r_pykrige": 9.0,
+      "shape": "exponential",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 3.0,
+      "max_scaled_value_error": 8.326672684688674e-15,
+      "max_scaled_variance_error": 5.218048215738236e-15,
+      "method": 1,
+      "name": "ordinary_2d_gaussian_filtered",
+      "r_pykrige": 5.25,
+      "shape": "gaussian",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 6.0,
+      "max_scaled_value_error": 4.357275238246248e-15,
+      "max_scaled_variance_error": 6.217248937900877e-15,
+      "method": 2,
+      "name": "universal_linear_2d_spherical",
+      "r_pykrige": 6.0,
+      "shape": "spherical",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 5.0,
+      "max_scaled_value_error": 9.992007221626409e-15,
+      "max_scaled_variance_error": 4.773959005888173e-15,
+      "method": 2,
+      "name": "universal_linear_2d_exponential",
+      "r_pykrige": 15.0,
+      "shape": "exponential",
+      "volumetric": false
+    },
+    {
+      "a_cpp": 6.0,
+      "max_scaled_value_error": 1.4719741101309034e-15,
+      "max_scaled_variance_error": 1.4171930778452776e-15,
+      "method": 1,
+      "name": "ordinary_3d_spherical",
+      "r_pykrige": 6.0,
+      "shape": "spherical",
+      "volumetric": true
+    },
+    {
+      "a_cpp": 4.5,
+      "max_scaled_value_error": 4.16025619302377e-15,
+      "max_scaled_variance_error": 4.3298697960381105e-15,
+      "method": 1,
+      "name": "ordinary_3d_exponential",
+      "r_pykrige": 13.5,
+      "shape": "exponential",
+      "volumetric": true
+    },
+    {
+      "a_cpp": 4.5,
+      "max_scaled_value_error": 1.5210055437364645e-14,
+      "max_scaled_variance_error": 7.449353956773286e-15,
+      "method": 1,
+      "name": "ordinary_3d_gaussian",
+      "r_pykrige": 7.875,
+      "shape": "gaussian",
+      "volumetric": true
+    },
+    {
+      "a_cpp": 7.0,
+      "max_scaled_value_error": 3.319566843629218e-14,
+      "max_scaled_variance_error": 1.1324274851176597e-14,
+      "method": 2,
+      "name": "universal_linear_3d_gaussian",
+      "r_pykrige": 12.25,
+      "shape": "gaussian",
+      "volumetric": true
+    }
+  ],
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "query_count": 99,
+  "range_convention_mapping": {
+    "exponential": "R_pykrige = 3 * a_cpp",
+    "gaussian": "R_pykrige = (7/4) * a_cpp",
+    "source": "Derived from pykrige/variogram_models.py (this venv's installed copy) and Source/KrigingCore/Private/Portable/KrigePortableCore.cpp EvaluateNormalizedStructure(); see module docstring of generate_goldens.py.",
+    "spherical": "R_pykrige = a_cpp"
+  },
+  "scenario_count": 11,
+  "sensitivity": {
+    "ordinary_2d_exponential": {
+      "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.47814386566824485,
+      "max_abs_variance_delta_between_mappings": 0.4759365596765911,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "ordinary_2d_exponential_filtered": {
+      "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.35052337667168953,
+      "max_abs_variance_delta_between_mappings": 0.4059528321645602,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "ordinary_2d_gaussian": {
+      "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.3005131325593666,
+      "max_abs_variance_delta_between_mappings": 0.5482080492454064,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "ordinary_2d_gaussian_filtered": {
+      "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.2118782009247041,
+      "max_abs_variance_delta_between_mappings": 0.4101025541438369,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "ordinary_3d_exponential": {
+      "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.41129669296473903,
+      "max_abs_variance_delta_between_mappings": 0.4562076451136398,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "ordinary_3d_gaussian": {
+      "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.568263131007199,
+      "max_abs_variance_delta_between_mappings": 0.6494104529103358,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "universal_linear_2d_exponential": {
+      "correct_mapping_used": "R_pykrige = 3 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.059885875338454575,
+      "max_abs_variance_delta_between_mappings": 0.3104824458455398,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    },
+    "universal_linear_3d_gaussian": {
+      "correct_mapping_used": "R_pykrige = 1.75 * a_cpp",
+      "interpretation": "A large delta here shows the naive same-convention assumption is detectably wrong on this exact scenario; the golden values recorded for this scenario use the correct mapping only.",
+      "max_abs_value_delta_between_mappings": 0.08520691823105331,
+      "max_abs_variance_delta_between_mappings": 0.5824746478762839,
+      "naive_mapping_used": "R_pykrige = a_cpp (assumes shared convention; WRONG for this shape)"
+    }
+  },
+  "source_sha256": {
+    "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+    "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+    "golden_probe.cpp": "b8ae602c4567ee9abec4a7af35255c403a0c5c26d3290ff5201e83cd22c59102",
+    "goldens.json": "1aab8fa80bbb5e0587ef783f30726b616553972dd0a1f0f822c1bab9d66d2370"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "compile_command": [
+    "c++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Public",
+    "-I",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Review/numeric_probe.cpp",
+    "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp",
+    "-o",
+    "/tmp/kriging_numeric_xw49gbs7/numeric_probe"
+  ],
+  "compiler": "c++",
+  "metrics": {
+    "as241_max_absolute_error": 2.6645352591003757e-15,
+    "bessel_max_relative_error": 5.953342970413191e-15,
+    "matern_gaussian_rescaled_range_mismatch": 0.020148109468343334,
+    "matern_gaussian_same_range_mismatch": 0.17870850356229911,
+    "matern_nu_9_99_to_10_discontinuity": 2.0676080150550114e-05,
+    "structure_max_absolute_error": 2.875477633779196e-14
+  },
+  "notes": [
+    "The shipped C++ analytic structure evaluator was compiled and called directly.",
+    "There is no CPU lookup table in this correctness gate, so no Python lookup restatement is reported as production evidence."
+  ],
+  "numpy": "2.5.2",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "scipy": "1.18.1",
+  "source_sha256": {
+    "Source/KrigingCore/Private/Portable/KrigeBessel.h": "7f2ce7696209e240095a4034f24611c40ba390d972586371aa6f567398ad9a6e",
+    "Source/KrigingCore/Private/Portable/KrigePortableCore.cpp": "ad38168e11353929630d7174ea56f65224de17c2afec7ce4267daac12f9f3d18",
+    "Source/KrigingCore/Public/KrigePortableCore.h": "93fd66a23d7db784e2d7526215c8522ce33e1de717c25e7bdf1e8a598a0a8c41",
+    "Tests/Review/numeric_probe.cpp": "365d5c189153de99f71e0b5f35ebd06bd8d5eaf34c21a56d29ffdb11fa5ad0eb"
+  },
+  "status": "PASS"
+}

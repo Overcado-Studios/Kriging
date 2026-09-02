@@ -1,0 +1,66 @@
+{
+  "cmake_version": "cmake version 4.2.1",
+  "compiler_requested": "c++",
+  "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "configuration": "Debug",
+  "ctest_version": "ctest version 4.2.1",
+  "finished_utc": "2026-08-25T15:11:48.970245+00:00",
+  "machine": "x86_64",
+  "name": "gcc_asan_ubsan",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "started_utc": "2026-08-25T15:10:59.659587+00:00",
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Tests/Standalone",
+        "-B",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_CXX_FLAGS=-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "-DCMAKE_EXE_LINKER_FLAGS=-fsanitize=address,undefined"
+      ],
+      "duration_seconds": 1.2274691170023289,
+      "name": "gcc_asan_ubsan:configure",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (1.1s)\n-- Generating done (0.1s)\n-- Build files have been written to: /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "--parallel",
+        "1"
+      ],
+      "duration_seconds": 39.697493860992836,
+      "name": "gcc_asan_ubsan:build",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "[  6%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableCore.cpp.o\n[ 12%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableAnalysis.cpp.o\n[ 18%] Building CXX object CMakeFiles/kriging_portable.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Portable/KrigePortableMarchingCubes.cpp.o\n[ 25%] Linking CXX static library libkriging_portable.a\n[ 25%] Built target kriging_portable\n[ 31%] Building CXX object CMakeFiles/kriging_core_tests.dir/test_core.cpp.o\n[ 37%] Linking CXX executable kriging_core_tests\n[ 37%] Built target kriging_core_tests\n[ 43%] Building CXX object CMakeFiles/kriging_allocation_probe.dir/allocation_probe.cpp.o\n[ 50%] Linking CXX executable kriging_allocation_probe\n[ 50%] Built target kriging_allocation_probe\n[ 56%] Building CXX object CMakeFiles/kriging_mc_sphere_test.dir/test_marching_cubes.cpp.o\n[ 62%] Linking CXX executable kriging_mc_sphere_test\n[ 62%] Built target kriging_mc_sphere_test\n[ 68%] Building CXX object CMakeFiles/kriging_mc_table_test.dir/test_mc_tables.cpp.o\n[ 75%] Linking CXX executable kriging_mc_table_test\n[ 75%] Built target kriging_mc_table_test\n[ 81%] Building CXX object CMakeFiles/kriging_analysis_smoke_test.dir/test_analysis_smoke.cpp.o\n[ 87%] Linking CXX executable kriging_analysis_smoke_test\n[ 87%] Built target kriging_analysis_smoke_test\n[ 93%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/KrigingCoreModule.cpp.o\n[100%] Building CXX object CMakeFiles/kriging_unreal_source_syntax.dir/mnt/c/Users/HomePC/Documents/ClaudeCode/kriging/Source/KrigingCore/Private/Tests/KrigeCoreAutomationTests.cpp.o\n[100%] Built target kriging_unreal_source_syntax\n"
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/tmp/kriging_gcc_asan_ubsan_5qij6kxg",
+        "--output-on-failure"
+      ],
+      "duration_seconds": 8.364276136999251,
+      "name": "gcc_asan_ubsan:ctest",
+      "return_code": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "Test project /tmp/kriging_gcc_asan_ubsan_5qij6kxg\n    Start 1: kriging_core_properties\n1/5 Test #1: kriging_core_properties ...............   Passed    6.26 sec\n    Start 2: kriging_global_query_no_allocations\n2/5 Test #2: kriging_global_query_no_allocations ...   Passed    1.81 sec\n    Start 3: mc_sphere_test\n3/5 Test #3: mc_sphere_test ........................   Passed    0.16 sec\n    Start 4: mc_table_test\n4/5 Test #4: mc_table_test .........................   Passed    0.01 sec\n    Start 5: analysis_smoke_test\n5/5 Test #5: analysis_smoke_test ...................   Passed    0.11 sec\n\n100% tests passed, 0 tests failed out of 5\n\nTotal Test time (real) =   8.36 sec\n"
+    }
+  ]
+}

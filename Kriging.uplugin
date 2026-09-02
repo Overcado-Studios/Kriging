@@ -1,0 +1,31 @@
+{
+  "FileVersion": 3,
+  "Version": 5,
+  "VersionName": "0.4.0",
+  "FriendlyName": "Kriging Core",
+  "Description": "Correctness-first kriging numerical core. The production kernel is exercised by a standalone C++ gate; Unreal engine-version gates remain explicit release blockers.",
+  "Category": "Tools",
+  "CreatedBy": "Open source contributors",
+  "CanContainContent": false,
+  "IsBetaVersion": true,
+  "Installed": false,
+  "SupportedTargetPlatforms": ["Win64", "Mac", "Linux"],
+  "Modules": [
+    {
+      "Name": "KrigingCore",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KrigingBlueprint",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "ProceduralMeshComponent",
+      "Enabled": true
+    }
+  ]
+}
